@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="16dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="?attr/colorOutlineVariant"
+    style="?attr/materialCardViewStyle"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemHabitRootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:background="?attr/colorSurfaceContainer">
+
+        <ImageView
+            android:id="@+id/habitCompletionIndicator"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_habit_circle_incomplete"
+            android:contentDescription="Mark habit complete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/habitProgressBar"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/habitText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toEndOf="@id/habitCompletionIndicator"
+            app:layout_constraintEnd_toStartOf="@id/habitStreakIcon"
+            app:layout_constraintTop_toTopOf="@id/habitCompletionIndicator" />
+
+        <ImageView
+            android:id="@+id/habitStreakIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_local_fire_department_24"
+            android:contentDescription="Current Streak Icon"
+            android:layout_marginEnd="4dp"
+            app:tint="@color/icon_streak_yellow"
+            app:layout_constraintEnd_toStartOf="@id/habitStreakText"
+            app:layout_constraintTop_toTopOf="@id/habitText"
+            app:layout_constraintBottom_toBottomOf="@id/habitText"/>
+
+        <TextView
+            android:id="@+id/habitStreakText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/habitText"
+            app:layout_constraintBottom_toBottomOf="@id/habitText"
+            tools:text="35"/>
+
+        <ProgressBar
+            android:id="@+id/habitProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintStart_toStartOf="@id/habitText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/habitText"
+            app:layout_constraintBottom_toTopOf="@id/habitProgressText"
+            android:max="100"
+            android:progress="0"
+            android:progressTint="?attr/colorPrimary"
+            android:progressBackgroundTint="?attr/colorSurfaceVariant"
+            android:visibility="gone"
+            tools:progress="60"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/habitProgressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintStart_toStartOf="@id/habitProgressBar"
+            app:layout_constraintTop_toBottomOf="@id/habitProgressBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
+            tools:text="18/30 days"
+            tools:visibility="visible"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

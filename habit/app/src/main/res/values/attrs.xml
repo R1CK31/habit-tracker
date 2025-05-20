@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorSurfaceInverse" format="color|reference" />
+    <attr name="colorOnSurfaceInverse" format="color|reference" />
+    <attr name="colorPrimaryInverse" format="color|reference" />
+    <attr name="colorSurfaceTint" format="color|reference" />
+
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="action_add_habit" />
+    <item type="id" name="action_refresh" />
+    <item type="id" name="action_profile" />
+    <item type="id" name="action_logout" />
+    <item type="id" name="context_edit" />
+    <item type="id" name="context_delete" />
+</resources>
